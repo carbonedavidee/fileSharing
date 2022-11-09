@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>Registrati</title>
+  </head>
+  <body>
+    <h1>Registrati</h1>
+    <form  action="/registrati" method="post">
+      <p>Username</p>  
+      <input type="text" name="nm">
+      <p>Password</p>
+      <input type="password" name="pw"> <br>
+      {%with messages = get_flashed_messages()%}
+        {%if messages%}
+          {% for msg in messages%}
+            {{msg}}
+          {%endfor%}
+        {%endif%}
+      {%endwith%} <br>
+      <input type="submit" name="submit" value="Registrati">
+    </form>
+  </body>
+</html>

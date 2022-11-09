@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>File Ricevuti</title>
+  </head>
+  <body>
+    <h1>Seleziona il file da scaricare</h1>
+    <form action="/ricevuti" method="post">
+      <select name="file_name">
+        {% for file in files%}
+          <option value="{{file}}">{{file}}</option>
+        {% endfor%}
+      </select>
+      <input type="submit" value="Scarica">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Bentornatə {{user}}</h1>
+    <form action="/", method="post">
+        <p>Modifica password</p>
+        <input type="password" name="pw"> <br>
+        <input type="submit" name="submit" value="Modifica"><br>
+        {%with messages = get_flashed_messages()%}
+        {%if messages%}
+          {% for msg in messages%}
+            {{msg}}
+          {%endfor%}
+        {%endif%}
+      {%endwith%}
+    </form>
+    <br><br>
+    <a href="/invia">Invia un file</a> <br>
+    <a href="/ricevuti">Visualizza i file ricevuti</a> <br>
+    <a href="/esci">Esci</a>
+  </body>
+</html>
